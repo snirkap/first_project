@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+     environment{
+        ONE='one'
+    }
+
+    stages{
+        stage('name'){
+            steps{
+                echo "$NAME"
+                echo "step1"
+            }
+        }
+        stage('one'){
+            steps{
+                echo "$ONE"
+                echo "step2"
+            }
+        }
+         stage('1'){
+             environment{
+              ONE='1'
+            }
+            steps{
+                echo "$ONE"
+                echo "step3"
+            }
+        }
+        stage('node_name'){
+            steps{
+                echo "$NODE_NAME"
+                echo "step4"
+            }
+        }
+    }
+}
