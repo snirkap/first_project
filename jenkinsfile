@@ -5,12 +5,6 @@ pipeline{
     }
 
     stages{
-        stage('name'){
-            steps{
-                echo "$NAME"
-                echo "step1"
-            }
-        }
         stage('one'){
             steps{
                 echo "$ONE"
