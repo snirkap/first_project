@@ -1,0 +1,51 @@
+pipeline{
+    agent any
+    stages{
+        stage('C'){
+            steps{
+                sh'''
+                if [ $language = "C" ]
+                then
+                cat C
+                fi
+                '''
+                
+            }
+        }
+        stage('JAVA'){
+            steps{
+                sh'''
+                if [ $language == "JAVA" ]
+                then
+                cat JAVA
+                fi
+                '''
+                
+            }
+        }
+        stage('PYTHON'){
+            steps{
+                sh'''
+                if [ $language == "PYTHON" ]
+                then
+                cat PYTHON
+                fi
+                '''
+                
+            }
+        }
+        stage('ALL'){
+            steps{
+                sh'''
+                if [ $language == "ALL" ]
+                then
+                cat c
+                cat JAVA
+                cat PYTHON
+                fi
+                '''
+                
+            }
+        }
+    }
+}
