@@ -4,7 +4,7 @@ pipeline{
         stage('C'){
             steps{
                 sh'''
-                if [ $language = "C" ]
+                if [ ${lan} = "C" ]
                 then
                 cat C
                 fi
@@ -15,7 +15,7 @@ pipeline{
         stage('JAVA'){
             steps{
                 sh'''
-                if [ $language = "JAVA" ]
+                if [ ${lan} = "JAVA" ]
                 then
                 cat JAVA
                 fi
@@ -26,7 +26,7 @@ pipeline{
         stage('PYTHON'){
             steps{
                 sh'''
-                if [ $language = "PYTHON" ]
+                if [ ${lan} = "PYTHON" ]
                 then
                 cat PYTHON
                 fi
@@ -37,7 +37,7 @@ pipeline{
         stage('ALL'){
             steps{
                 sh'''
-                if [ $language = "ALL" ]
+                if [ ${lan} = "ALL" ]
                 then
                 cat c
                 cat JAVA
